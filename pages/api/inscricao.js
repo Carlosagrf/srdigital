@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     ]);
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('Erro ao salvar no Google Sheets:', err);
+    console.error('Erro ao salvar inscrição:', err);
     return res.status(500).json({ error: 'Erro ao salvar inscrição.' });
   }
 } 

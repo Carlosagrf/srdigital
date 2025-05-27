@@ -188,6 +188,7 @@ export default function Home() {
 
   const handleConfirmarParticipacao = async () => {
     setLoadingSubmit(true);
+    console.log(JSON.stringify(form));
     try {
       const res = await fetch('/api/inscricao', {
         method: 'POST',
