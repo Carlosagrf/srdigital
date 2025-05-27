@@ -29,10 +29,10 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
   }
-
-  const { nome, email, instagram, whatsapp, tiktok, produto, cep, rua, numero, complemento, bairro, cidade, estado } = req.body;
-  if (!nome || !email || !produto || !cep || !rua || !numero || !bairro || !cidade || !estado || (!instagram && !tiktok)) {
-    return res.status(400).json({ error: 'Campos obrigatórios faltando: informe Instagram ou TikTok.' });
+  
+  const { nome, email, instagram, whatsapp, tiktok, cep, rua, numero, complemento, bairro, cidade, estado } = req.body;
+  if (!nome || !email || !cep || !rua || !numero || !bairro || !cidade || !estado || (!instagram && !tiktok)) {
+    return res.status(400).json({ error: 'Campos obrigatórios faltando.' });
   }
 
   try {
@@ -42,7 +42,6 @@ export default async function handler(req, res) {
       instagram || '',
       whatsapp || '',
       tiktok || '',
-      produto,
       cep,
       rua,
       numero,

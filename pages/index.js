@@ -62,7 +62,6 @@ export default function Home() {
     youtube: '',
     motivo: '',
     termos: false,
-    produto: '',
     cep: '',
     rua: '',
     numero: '',
@@ -242,33 +241,18 @@ export default function Home() {
               <p>Cadastro e Seleção:</p>
               <ul>
                 <li>Após preencher o cadastro, você será adicionado a uma lista de influenciadores.</li>
-                <li>Somente os influenciadores selecionados receberão um e-mail com o link de afiliado e estarão elegíveis ao comissionamento e ao recebimento do produto.</li>
-                <li>A Satiko entrará em contato com você novamente caso seja selecionado, enviando mais informações sobre a campanha.</li>
+                <li>Somente os influenciadores selecionados receberão um e-mail com o link de afiliado e estarão elegíveis ao comissionamento.</li>
               </ul>
 
               <p>Recebimento do Produto:</p>
               <ul>
-                <li>Caso haja produto escolhido, o produto escolhido será enviado como cortesia para a criação de conteúdo e/ou review do produto.</li>
-                <li>Caso você seja escolhido como um dos influenciadores para a campanha, você receberá em sua casa o produto que escolheu durante a inscrição.</li>
-                <li>Por isso, é essencial fornecer o endereço corretamente no cadastro.</li>
+                <li>Caso futuras campanhas envolvam produtos, o produto escolhido será enviado como cortesia para a criação de conteúdo e/ou review do produto.</li>
+                <li>É essencial fornecer o endereço corretamente no cadastro.</li>
               </ul>
 
               <p>Postagens e Código de Afiliado:</p>
               <ul>
-                <li>Para realizar as postagens, sempre utilize o código de afiliado que será enviado nas fases futuras da campanha.</li>
-              </ul>
-
-              <p>Comissão por Vendas:</p>
-              <ul>
-                <li>Além de receber os produtos, os influenciadores da campanha têm direito a 5% de comissão sobre as vendas realizadas dos produtos.</li>
-                <li>Nas próximas fases da campanha, o seu e-mail cadastrado no formulário dará acesso ao relatório de suas vendas.</li>
-              </ul>
-
-              <p>Pagamento das Comissões:</p>
-              <ul>
-                <li>O pagamento das comissões será realizado ao término da campanha.</li>
-                <li>Todos os influenciadores receberão um formulário para informar os dados necessários para o recebimento da comissão.</li>
-                <li>O pagamento das comissões é de responsabilidade da Cia Beauty.</li>
+                <li>Para realizar as postagens, sempre utilize o código de afiliado que será enviado em futuras fases.</li>
               </ul>
 
               <p>Comunicações da Campanha:</p>
@@ -278,7 +262,7 @@ export default function Home() {
               </ul>
 
               <p style={{ color: '#e11d48', fontWeight: '600', marginTop: '20px' }}>Importante:</p>
-              <p style={{ color: '#e11d48', marginTop: '8px' }}>O preenchimento deste formulário não garante a participação na campanha nem o envio do produto gratuitamente.</p>
+              <p style={{ color: '#e11d48', marginTop: '8px' }}>O preenchimento deste formulário não garante a participação em campanha nem o envio do produto gratuitamente.</p>
             </div>
             <button 
               className={styles.btnConfirmar} 

@@ -9,7 +9,7 @@
 }
 
 .btn {
-  background: linear-gradient(90deg, #494132 20%, #f38414 100%);
+  background: linear-gradient(90deg, #f38414 100%);
   color: #fff;
   font-weight: bold;
   border: none;
@@ -24,7 +24,7 @@
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #fd1d1d 40%, #181818 100%);
+  background: linear-gradient(90deg, #f38414 100%, #494132 20%);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 24px #ff6ee6aa, 0 0 12px #7c3aed77;
 }
@@ -314,7 +314,7 @@
 
 .modalContent h3 {
   margin: 18px 0 0 0;
-  color: var(--srdigi-purple);
+  color: var(--srdigi-orange);
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
@@ -738,7 +738,7 @@
 }
 
 .modalTitle {
-  color: var(--srdigi-purple);
+  color: var(--srdigi-orange);
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0 0 20px 0;
@@ -758,7 +758,7 @@
 .termosContent p {
   margin: 16px 0 8px 0;
   font-weight: 600;
-  color: var(--srdigi-purple);
+  color: var(--srdigi-orange);
 }
 
 .termosContent ul {
@@ -771,7 +771,7 @@
 }
 
 .btnConfirmar {
-  background: linear-gradient(90deg, var(--srdigi-purple) 60%, var(--srdigi-yellow) 100%);
+  background: linear-gradient(90deg, var(--srdigi-purple) 10%, var(--srdigi-orange) 40%);
   color: #fff;
   font-weight: bold;
   border: none;
@@ -786,7 +786,7 @@
 }
 
 .btnConfirmar:hover {
-  background: linear-gradient(90deg, var(--srdigi-yellow) 40%, var(--srdigi-purple) 100%);
+  background: linear-gradient(90deg, var(--srdigi-orange) 40%, var(--srdigi-purple) 80%);
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 24px #ff6ee6aa, 0 0 12px #7c3aed77;
 }
