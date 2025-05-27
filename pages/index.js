@@ -307,9 +307,8 @@ export default function Home() {
         <div className={styles.headerCardSRDigi}>
           <img src="https://static.wixstatic.com/media/c966c9_e5112dfd3f744b608a71df5b7be8e917~mv2.png/v1/fill/w_720,h_720,al_c,lg_1,q_90,enc_avif,quality_auto/c966c9_e5112dfd3f744b608a71df5b7be8e917~mv2.png" alt="SR Digital" className={styles.logoSRDigi} />
           <div>
-            <h1 className={styles.headerTitleSRDigi}>INFLUENCIADOR SR DIGITAL</h1>
             <p className={styles.headerSubtitleSRDigi}>
-              Preencha o formulário para participar da campanha.
+              Preencha o formulário para se cadastrar como influenciador da SR Digital.
             </p>
           </div>
         </div>
