@@ -7,6 +7,7 @@ const RANGE = 'A2:O'; // Começa na linha 2, colunas A a O (15 colunas)
 
 async function appendToSheet(values) {
   const credentialsPath = path.join(process.cwd(), 'api/google-credentials.json');
+  console.log(process.env.GOOGLE_CREDENTIALS_JSON);
   const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
   
   console.log(credentials);
