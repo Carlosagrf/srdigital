@@ -8,6 +8,7 @@ const RANGE = 'A2:O'; // Começa na linha 2, colunas A a O (15 colunas)
 async function appendToSheet(values) {
   const credentialsPath = path.join(process.cwd(), 'api/google-credentials.json');
   const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON);
+  console.log(credentials);
 
   const auth = new google.auth.GoogleAuth({
     credentials,
@@ -53,6 +54,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Erro ao salvar no Google Sheets:', err);
-    return res.status(500).json({ error: 'Erro ao salvar inscrição no Google Sheets' });
+    return res.status(500).json({ error: 'Erro ao salvar inscrição.' });
   }
 } 
