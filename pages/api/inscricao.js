@@ -30,7 +30,6 @@ async function appendToSheet(values) {
 }
 
 export default async function handler(req, res) {
-  console.log("chegou aqui");
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
   }
@@ -41,7 +40,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log("chegou aqui 2");
     await appendToSheet([
       nome,
       email,
