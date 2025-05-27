@@ -180,10 +180,6 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErro('');
-    if (!form.produto) {
-      setErro('Selecione um produto para participar.');
-      return;
-    }
     if (!form.cep || !form.rua || !form.numero || !form.bairro || !form.cidade || !form.estado) {
       setErro('Preencha todos os campos obrigatórios do endereço.');
       return;
