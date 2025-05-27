@@ -190,6 +190,7 @@ export default function Home() {
     setLoadingSubmit(true);
     
     try {
+      console.log("chegou aqui 3");
       const res = await fetch('/api/inscricao', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

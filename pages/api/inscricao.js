@@ -41,6 +41,7 @@ export default async function handler(req, res) {
   }
 
   try {
+    console.log("chegou aqui 2");
     await appendToSheet([
       nome,
       email,
