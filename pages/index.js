@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/Form.module.css';
 import 'keen-slider/keen-slider.min.css';
+import InputMask from 'react-input-mask';
+
+import logo from '../public/sr-logo-dark.svg';
+
 import { useKeenSlider } from 'keen-slider/react';
 
 const estados = [
@@ -286,32 +290,42 @@ export default function Home() {
 
       <div className={styles.formBox}>
         <div className={styles.headerCardSRDigi}>
-          <img src="https://static.wixstatic.com/media/c966c9_e5112dfd3f744b608a71df5b7be8e917~mv2.png/v1/fill/w_720,h_720,al_c,lg_1,q_90,enc_avif,quality_auto/c966c9_e5112dfd3f744b608a71df5b7be8e917~mv2.png" alt="SR Digital" className={styles.logoSRDigi} />
           <div>
-            <p className={styles.headerSubtitleSRDigi}>
-              Preencha o formulário para se cadastrar como influenciador da SR Digital.
-            </p>
+            <Image src={logo} alt="Logo SR Digi" width={70} className={styles.logoSRDigi} />
+            <h1>Cadastro de Influenciadores</h1>
+            <p>Seja visto por marcas que estão procurando creators como você!</p>
           </div>
         </div>
         <form className={styles.form} onSubmit={handleSubmit}>
           
-          <input name="nome" placeholder="Nome completo" value={form.nome} onChange={handleChange} required />
-          <input name="email" type="email" placeholder="E-mail" value={form.email} onChange={handleChange} required />
-          <input name="instagram" placeholder="Instagram (@handle)" value={form.instagram} onChange={handleChange} required />
-          <input name="tiktok" placeholder="TikTok (@handle)" value={form.tiktok} onChange={handleChange} />
-          <input name="whatsapp" placeholder="WhatsApp" value={form.whatsapp} onChange={handleChange} />
-          <input name="cep" placeholder="CEP" value={form.cep} onChange={handleChange} required maxLength={9} />
+          <input name="nome" className={`${styles.fieldName}`} placeholder="Nome completo" value={form.nome} onChange={handleChange} required />
+          <input name="email" className={`${styles.fieldEmail}`} type="email" placeholder="E-mail" value={form.email} onChange={handleChange} required />
+          <input name="instagram" className={`${styles.fieldInstagram}`} placeholder="Instagram @seuusuario" value={form.instagram} onChange={handleChange} required />
+          <input name="tiktok" className={`${styles.fieldTiktok}`} placeholder="TikTok @seuusuario" value={form.tiktok} onChange={handleChange} />
+          <input name="whatsapp" className={`${styles.fieldWhatsapp}`} placeholder="WhatsApp" value={form.whatsapp} onChange={handleChange} />
+          
+          <InputMask
+            mask="99999-999"
+            name="cep"
+            value={form.cep}
+            onChange={handleChange}
+            required
+          >
+            {(inputProps) => (
+              <input
+                {...inputProps}
+                className={styles.fieldCep}
+                placeholder="CEP"
+              />
+            )}
+          </InputMask>
+
           {cepBuscando && <span style={{color: '#7c3aed', fontSize: '0.95em'}}>Buscando endereço...</span>}
           {cepErro && <span style={{color: '#e11d48', fontSize: '0.95em'}}>{cepErro}</span>}
-          <input name="rua" placeholder="Rua" value={form.rua} onChange={handleChange} required />
-          <input name="numero" placeholder="Número" value={form.numero} onChange={handleChange} required />
-          <input name="complemento" placeholder="Complemento (opcional)" value={form.complemento} onChange={handleChange} />
-          <select name="estado" value={form.estado} onChange={handleChange} required className={styles.select}>
-            <option value="">Selecione o estado</option>
-            {estados.map((uf) => (
-              <option key={uf.sigla} value={uf.sigla}>{uf.nome}</option>
-            ))}
-          </select>
+          <input name="rua" className={`${styles.fieldCep2}`} placeholder="Rua" value={form.rua} onChange={handleChange} required />
+          <input name="numero" className={`${styles.fieldCep2}`} placeholder="Número" value={form.numero} onChange={handleChange} required />
+          <input name="complemento" className={`${styles.fieldCep2}`} placeholder="Complemento (opcional)" value={form.complemento} onChange={handleChange} />
+          <input name="bairro" className={`${styles.fieldCep2}`} placeholder="Bairro" value={form.bairro} onChange={handleChange} required />
           <select name="cidade" value={form.cidade} onChange={handleChange} required disabled={!form.estado || loadingCidades} className={styles.select}>
             <option value="">{loadingCidades ? 'Carregando cidades...' : 'Selecione a cidade'}</option>
             {erroCidades && <option disabled>{erroCidades}</option>}
@@ -319,7 +333,12 @@ export default function Home() {
               <option key={cidade} value={cidade}>{cidade}</option>
             ))}
           </select>
-          <input name="bairro" placeholder="Bairro" value={form.bairro} onChange={handleChange} required />
+          <select name="estado" value={form.estado} onChange={handleChange} required className={styles.select}>
+            <option value="">Selecione o estado</option>
+            {estados.map((uf) => (
+              <option key={uf.sigla} value={uf.sigla}>{uf.nome}</option>
+            ))}
+          </select>
           {erro && <div className={styles.erro}>{erro}</div>}
           <button type="submit" className={styles.btn} disabled={loadingSubmit} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {loadingSubmit ? (
@@ -328,7 +347,7 @@ export default function Home() {
                 Enviando...
               </span>
             ) : (
-              <span style={{ width: '100%', textAlign: 'center' }}>Quero Participar!</span>
+              <span style={{ width: '100%', textAlign: 'center' }}>Enviar!</span>
             )}
           </button>
         </form>
