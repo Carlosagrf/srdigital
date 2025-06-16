@@ -11,7 +11,9 @@ body, html {
   margin: 0;
   padding: 0;
   background-color: #000;
-  background-image: url('../public/bg-cadastro-de-influenciadores-layout.jpg');
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-image: url('../public/bg-cadastro-de-influenciadores-layout--3.png');
 }
 
 body, input, textarea, select, button, label {
